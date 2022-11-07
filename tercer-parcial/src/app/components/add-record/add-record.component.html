@@ -1,0 +1,46 @@
+<div class="container fluid text-center">
+  <h1>Añadir Disco</h1>
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-sm">
+        <label for="idRecord" class="form-label">ID</label>
+        <input formControlName="id" type="number" class="form-control" id="idRecord" >
+        </div>
+      <div class="col">
+      <label for="nombre" class="form-label">Nombre del Álbum</label>
+      <input formControlName="titulo" type="text" class="form-control" id="nombre" >
+      </div>
+      <div class="col">
+      <label for="artista" class="form-label">Artista</label>
+      <input  formControlName="artista" type="text" class="form-control" id="artista" >
+      </div>
+    </div>
+    <br>
+    <div class="row">
+     <div class="col-sm">
+        <label for="genero" class="form-label">Género</label>
+        <input formControlName="genero"type="text" class="form-control" id="genero" >
+        </div>
+      <div class="col">
+      <label for="exampleInputEmail1" class="form-label">Duración (HH:MM)</label>
+      <input formControlName="duracion" type="time" class="form-control" id="duracion" >
+      </div>
+      <div class="col">
+      <label for="precio" class="form-label">Precio</label>
+      <input formControlName="precio" type="text" class="form-control" id="precio" >
+      </div>
+      <div class="row">
+        <div class="col-auto">
+        <label for="img">Imágen<input type="file" alt=""></label>
+      </div>
+      <div class="col">
+      <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+      <textarea formControlName="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    </div>
+    </div>
+      <button class="btn btn-primary">Añadir</button>
+
+
+  </form>
+</div>

@@ -5,4 +5,5 @@ export interface Producto {
   description: string;
   artist: string;
   image: string;
+  genero: string;
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+//import { Firestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
@@ -7,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductosComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

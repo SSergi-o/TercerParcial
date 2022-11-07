@@ -1,5 +1,25 @@
-<div class="container mt-4">
-  <div class="card">
+<div class="container mt-4" *ngFor="let product of products">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{product.artist}}</mat-card-title>
+      <mat-card-subtitle>{{product.name}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="assets/img{{product.id}}.png" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        {{product.description}}
+      </p>
+      <p>{{product.price}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+
+
+  <!-- <div class="card">
     <div class="card-body">
       <span class="h3">Lista Discos</span>
       <table class="table table-striped mt-5">
@@ -29,10 +49,29 @@
           </tr>
 
         </tbody>
-      </table>
-      <ul>
+      </table> -->
+      <!-- <div *ngFor="let product of products">
+      <div class="card">
+        <div class="image"><img src="assets/img{{product.id}}.png"></div>
+          <h2 class="title">{{product.name}}</h2>
+          <span class="price">${{product.price}}</span>
 
-      </ul>
+        </div>
+      </div>
+
+      <ul>
+        <div class="container-sm" *ngFor="let product of products">
+          <div class="info">
+            <p>{{product.id}}</p>
+            <p>{{product.artist}}</p>
+            <p>{{product.description}}</p>
+            <p>{{product.genero}}</p>
+            <p>{{product.price}}</p>
+
+            <img src="assets/img{{product.id}}.png" >
+          </div>
+
+        </div>
+      </ul> -->
     </div>
-  </div>
-</div>
+

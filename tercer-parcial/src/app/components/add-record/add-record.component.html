@@ -8,11 +8,11 @@
         </div>
       <div class="col">
       <label for="nombre" class="form-label">Nombre del Álbum</label>
-      <input formControlName="titulo" type="text" class="form-control" id="nombre" >
+      <input formControlName="name" type="text" class="form-control" id="nombre" >
       </div>
       <div class="col">
       <label for="artista" class="form-label">Artista</label>
-      <input  formControlName="artista" type="text" class="form-control" id="artista" >
+      <input  formControlName="artist" type="text" class="form-control" id="artista" >
       </div>
     </div>
     <br>
@@ -27,12 +27,12 @@
       </div>
       <div class="col">
       <label for="precio" class="form-label">Precio</label>
-      <input formControlName="precio" type="text" class="form-control" id="precio" >
+      <input formControlName="price" type="text" class="form-control" id="precio" >
       </div>
       <div class="row">
-        <div class="col-auto">
-        <label for="img">Imágen<input type="file" alt=""></label>
-      </div>
+        <div class="input-group">
+          <input type="file" formControlName="imagen" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+        </div>
       <div class="col">
       <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
       <textarea formControlName="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>

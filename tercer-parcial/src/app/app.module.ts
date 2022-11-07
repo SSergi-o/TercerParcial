@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
 import { AddRecordComponent } from './components/add-record/add-record.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
@@ -37,10 +39,12 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
+    MatCardModule,
     BrowserModule,
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    BrowserAnimationsModule
 
   ],
   providers: [],

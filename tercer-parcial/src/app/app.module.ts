@@ -17,12 +17,18 @@ import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesi
 import { AddRecordComponent } from './components/add-record/add-record.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
+import { AbmComponent } from './components/abm/abm.component';
+import { PanelAdminComponent } from './components/panel-admin/panel-admin.component';
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
   {path: 'productos',component: ProductosComponent},
   {path: 'iniciar-sesion',component: IniciarSesionComponent},
-  {path: 'add-record',component: AddRecordComponent}
+  {path: 'add-record',component: AddRecordComponent},
+  {path: 'abm',component: AbmComponent},
+  {path: 'panel-admin',component: PanelAdminComponent},
+
+
 
 ];
 @NgModule({
@@ -34,6 +40,9 @@ const routes: Routes = [
     ProductosComponent,
     IniciarSesionComponent,
     AddRecordComponent,
+    AbmComponent,
+    PanelAdminComponent,
+
 
   ],
   imports: [

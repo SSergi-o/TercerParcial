@@ -3,10 +3,10 @@
   <div>
     <h1>Inicio de sesión</h1>
     <p>Ingresa tus datos para iniciar sesión</p>
-    <form action="" >
-    <input type="text" placeholder="Nombre de Usuario">
-    <input type="password" placeholder="Contraseña">
-    <button type="submit">Iniciar Sesion</button>
+    <form action="" [formGroup]="form" (ngSubmit)="login()">
+    <input type="text" formControlName="userName" placeholder="Nombre de Usuario">
+    <input type="password" formControlName="password" placeholder="Contraseña">
+    <button type="submit" >Iniciar Sesion</button>
   </form>
   </div>
 </div>

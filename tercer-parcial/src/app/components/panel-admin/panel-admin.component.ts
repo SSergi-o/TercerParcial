@@ -1,19 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-//import { Firestore } from '@angular/fire/firestore';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
-
-import { Observable } from 'rxjs';
 import { Producto } from 'src/app/interfaces/product';
 import { ProductosService } from 'src/app/services/productos.service';
 @Component({
-  selector: 'app-productos',
-  templateUrl: './productos.component.html',
-  styleUrls: ['./productos.component.css']
+  selector: 'app-panel-admin',
+  templateUrl: './panel-admin.component.html',
+  styleUrls: ['./panel-admin.component.css']
 })
-export class ProductosComponent implements OnInit {
-  products: Producto[];
+export class PanelAdminComponent implements OnInit {
+  productos!: Producto[];
   constructor(private productsService: ProductosService) {
-    this.products = [{
+    this.productos = [{
       id:1,
       name: 'Prueba de sitio',
       description: 'Esto es una prueba',
@@ -22,12 +18,11 @@ export class ProductosComponent implements OnInit {
       genero: 'Prueba',
       image: (''),
     }];
-
   }
 
   ngOnInit(): void {
     this.productsService.getRecords().subscribe(products => {
-      this.products = products;
+      this.productos = products;
     });
   }
 

@@ -8,7 +8,7 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class IniciarSesionComponent implements OnInit {
   public form: FormGroup;
-  redirect!: Router;
+
   constructor(private router:Router) {
   this.form = new FormGroup({
     userName: new FormControl('', [Validators.required]),

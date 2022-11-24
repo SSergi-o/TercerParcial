@@ -31,22 +31,23 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr *ngFor="let producto of productos">
-						<td>
+                <tbody  >
+                    <tr *ngFor="let producto of productos" >
+
+						<td >
 							<span class="custom-checkbox">
 								<input type="checkbox" id="checkbox1" name="options[]" value="1">
 								<label for="checkbox1"></label>
 							</span>
 						</td>
-                        <td>{{producto.name}}</td>
+                        <td >{{producto.name}}</td>
 						<td><img src="assets/img{{producto.id}}.png" alt="" style="width: 56px;"></td>
             <td>{{producto.artist}}</td>
                         <td>{{producto.genero}}</td>
                         <td>$ {{producto.price}}</td>
                         <td>
                             <a routerLink="/add-record" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            <a  class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                         </td>
                     </tr>
                     <tr>

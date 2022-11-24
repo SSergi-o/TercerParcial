@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import {  FormControl, FormGroup, Validators, ReactiveFormsModule} from '@angular/forms';
 import { ProductosService } from 'src/app/services/productos.service';
 
@@ -10,7 +11,8 @@ import { ProductosService } from 'src/app/services/productos.service';
 export class AddRecordComponent implements OnInit {
   public formulario : FormGroup;
   constructor(
-    private productoService: ProductosService
+    private productoService: ProductosService,
+
   ) {
     this.formulario = new FormGroup({
       id : new FormControl('', [Validators.required]),
@@ -34,12 +36,33 @@ export class AddRecordComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-  async onSubmit() {
+  /*async onSubmit() {
     const price = this.formulario.value.price;
     console.log(this.formulario.value);
     const response =  await this.productoService.addProduct(this.formulario.value);
     console.log(response);
     console.log(price);
+  }*/
+
+  submitRecord(){
+    const empleado: any = {
+      id: this.formulario.value.id,
+      name: this.formulario.value.name,
+      artist: this.formulario.value.artist,
+      genero: this.formulario.value.genero,
+      duracion: this.formulario.value.duracion,
+      price: this.formulario.value.price,
+      description: this.formulario.value.description
+    }
+    this.productoService.addRecord(empleado).then
+    (() => {
+      console.log('Producto agregado');
+      this.formulario.reset();
+    }
+    ).catch(error => {
+      console.log(error);
+    }
+    );
   }
 
 }

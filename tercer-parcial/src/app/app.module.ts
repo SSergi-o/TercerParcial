@@ -10,7 +10,7 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-
+import { AngularFireModule } from '@angular/fire/compat';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
@@ -51,8 +51,9 @@ const routes: Routes = [
     MatCardModule,
     BrowserModule,
     AppRoutingModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(environment.firebase),
+    //provideFirebaseApp(() => initializeApp(environment.firebase)),
+    //provideFirestore(() => getFirestore()),
     BrowserAnimationsModule
 
   ],

@@ -11,9 +11,9 @@ import { ProductosService } from 'src/app/services/productos.service';
   styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent implements OnInit {
-  products: Producto[];
-  constructor(private productsService: ProductosService) {
-    this.products = [{
+  products: Producto[] = [];
+  constructor(private _productsService: ProductosService) {
+    /*this.products = [{
       id:1,
       name: 'Prueba de sitio',
       description: 'Esto es una prueba',
@@ -21,13 +21,37 @@ export class ProductosComponent implements OnInit {
       artist: 'Prueba',
       genero: 'Prueba',
       image: (''),
-    }];
+    }];*/
 
   }
 
   ngOnInit(): void {
-    this.productsService.getRecords().subscribe(products => {
+    this.getRecords();
+    /*this.productsService.getRecords().subscribe(products => {
       this.products = products;
+    });*/
+  }
+  getRecords(){
+    this._productsService.getRecords().subscribe(data => {
+      //this.products = products;
+      data.forEach((element:any) => {
+          console.log(element.payload.doc.data());
+
+          this.products.push({
+
+            id: element.payload.doc.id,
+            ...element.payload.doc.data()
+          })
+
+      });
+
+    });
+  }
+  deleteRecord(id: string){
+    this._productsService.deleteRecord(id).then(() => {
+      console.log('Producto eliminado');
+    }).catch(error => {
+      console.log(error);
     });
   }
 

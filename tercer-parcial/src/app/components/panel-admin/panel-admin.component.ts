@@ -9,7 +9,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
   styleUrls: ['./panel-admin.component.css']
 })
 export class PanelAdminComponent implements OnInit {
-  productos: Producto[] = [];
+  productos: any[] = [];
   constructor(private productsService: ProductosService) {
    /* this.productos = [{
       id:0,
@@ -30,7 +30,7 @@ export class PanelAdminComponent implements OnInit {
   }
   getRecords(){
     this.productsService.getRecords().subscribe(data => {
-      //this.products = products;
+      this.productos = [];
       data.forEach((element:any) => {
           console.log(element.payload.doc.data());
           this.productos.push({
@@ -40,6 +40,16 @@ export class PanelAdminComponent implements OnInit {
       });
 
     });
+  }
+  deleteOnClick(id:string){
+    this.productsService.deleteRecord(id).then(() => {
+      console.log('disco' + id + 'eliminado');
+    })
+    .catch(error => {
+      console.log(error)
+    })
+
+
   }
 
 }

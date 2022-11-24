@@ -27,6 +27,9 @@ const routes: Routes = [
   {path: 'add-record',component: AddRecordComponent},
   {path: 'abm',component: AbmComponent},
   {path: 'panel-admin',component: PanelAdminComponent},
+  {path: 'edit-record/:id',component: AddRecordComponent},
+
+
 
 
 

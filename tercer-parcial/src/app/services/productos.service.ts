@@ -20,29 +20,17 @@ export class ProductosService {
 
   }
   getRecords(): Observable<any> {
-    return this.Firestore.collection('products',ref => ref.orderBy('name','asc')).snapshotChanges();
+    return this.Firestore.collection('products').snapshotChanges();
   }
   deleteRecord(id: string): Promise<any> {
     return this.Firestore.collection('products').doc(id).delete();
   }
-  /*addProduct(product: Producto) {
-    const recordRef = collection(this.Firestore ,'products');
-    this.router.navigate(['/panel-admin']);
-    return addDoc(recordRef, product);
-
-  }*/
-  /*getRecords():Observable<Producto[]> {
-    const recordRef = collection(this.firestore ,'products');
-    return collectionData(recordRef, {idField: 'titulo'}) as Observable<Producto[]>;
-}
-  deleteProduct(product: Producto) {
-
-    const recordRef = doc(this.firestore ,`products/${product.name}`);
-    //this.router.navigate(['/panel-admin']);
-    return deleteDoc(recordRef);
-
-
-  }*/
+  getRecord(id: string): Observable<any> {
+    return this.Firestore.collection('products').doc(id).snapshotChanges();
+  }
+  updateRecord(id: string, data: any): Promise<any> {
+    return this.Firestore.collection('products').doc(id).update(data);
+  }
 
 
 }

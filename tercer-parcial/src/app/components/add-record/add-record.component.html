@@ -1,11 +1,8 @@
 <div class="container fluid text-center">
-  <h1>Añadir Disco</h1>
+  <h1>{{titulo}}</h1>
   <form [formGroup]="formulario" (ngSubmit)="submitRecord()">
     <div class="row">
-      <div class="col-sm">
-        <label for="idRecord" class="form-label">ID</label>
-        <input formControlName="id" type="number" class="form-control" id="idRecord" >
-        </div>
+
       <div class="col">
       <label for="nombre" class="form-label">Nombre del Álbum</label>
       <input formControlName="name" type="text" class="form-control" id="nombre" >
@@ -31,7 +28,7 @@
       </div>
       <div class="row">
         <div class="input-group">
-          <input type="file" formControlName="imagen" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+          <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
         </div>
       <div class="col">
       <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>

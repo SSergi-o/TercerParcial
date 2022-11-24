@@ -9,8 +9,7 @@
 						<h2>Manage <b>Employees</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
-						<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+						<a routerLink="/add-record" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
 					</div>
                 </div>
             </div>
@@ -46,8 +45,8 @@
                         <td>{{producto.genero}}</td>
                         <td>$ {{producto.price}}</td>
                         <td>
-                            <a routerLink="/add-record" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                            <a  class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            <i  class="material-icons" data-toggle="tooltip" [routerLink]="['/edit-record/',producto.id]" title="Edit">&#xE254;</i>
+                            <i (click)="deleteOnClick(producto.id)" class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
                         </td>
                     </tr>
                     <tr>
